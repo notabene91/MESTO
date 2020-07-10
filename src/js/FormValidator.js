@@ -1,15 +1,10 @@
-class FormValidator {
-  static errorMsg = {
-    empty: "Это обязательное поле",
-    wrongLength: "Должно быть от 2 до 30 символов",
-    wrongUrl: "Здесь должна быть ссылка"
-  }
-
-  constructor(form, submitButton) {
+export class FormValidator {
+  
+  constructor(form, submitButton, errMessage) {
     this.form = form;
     this.inputs = Array.from(this.form.elements)
     this.submitButton = submitButton;
-    this.errorMessage = FormValidator.errorMsg;
+    this.errorMessage = errMessage;
     this.setEventListeners();
   }
 

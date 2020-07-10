@@ -1,4 +1,4 @@
-class Popup {
+export class Popup {
   constructor(popup) {
     this.popup = popup;
     this.close = this.close.bind(this);
@@ -17,7 +17,7 @@ class Popup {
   }
 }
 
-class PopupPicture extends Popup {
+export class PopupPicture extends Popup {
   constructor(popup, image) {
     super(popup);
     this.image = image;

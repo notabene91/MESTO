@@ -1,4 +1,4 @@
-class UserInfo {
+export class UserInfo {
     constructor(objForUserInfo) {
       this.nameElement = objForUserInfo.userName;
       this.aboutElement = objForUserInfo.userAbout;
