@@ -1,25 +1,11 @@
-class Card {
-  static markup = `
-      <div class = "place-card">
-        <div class="place-card__image" style="background-image: url()">
-        <button class="place-card__delete-icon"></button>
-      </div>
-      <div class="place-card__description">
-        <h3 class="place-card__name"></h3>
-        <div class=place-card__like-section>
-          <button class="place-card__like-icon"></button>
-          <p class="place-card__like-count"></p>
-        </div>
-      </div>
-      </div>
-    `;
+export class Card {
 
-  constructor(cardData, api) {
+  constructor(cardData, api, markup) {
     this.cardData = cardData;
     this.name = cardData.name;
     this.link = cardData.link;
     this.count = cardData.likes.length;
-    this.markup = Card.markup;
+    this.markup = markup;
     this.remove = this.remove.bind(this);
     this.like = this.like.bind(this);
     this.api = api;
