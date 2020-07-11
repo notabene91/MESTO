@@ -42,12 +42,14 @@ import { UserInfo } from "./js/UserInfo";
         about: about,
         userAvatar: userAvatar
     }
+    
+    const isDev = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
     const config = {
         headers: {
             authorization: '5efa3e04-76d8-4219-be1c-285105682e00',
             'Content-Type': 'application/json'
         },
-        url: 'https://praktikum.tk/cohort11',
+        url: isDev,
     }
 
     const markup = `
@@ -57,7 +59,7 @@ import { UserInfo } from "./js/UserInfo";
     </div>
     <div class="place-card__description">
       <h3 class="place-card__name"></h3>
-      <div class=place-card__like-section>
+      <div class="place-card__like-section">
         <button class="place-card__like-icon"></button>
         <p class="place-card__like-count"></p>
       </div>
@@ -129,9 +131,9 @@ import { UserInfo } from "./js/UserInfo";
         event.preventDefault();
         buttonAddPlace.textContent = 'Загрузка...';
         buttonAddPlace.setAttribute('style', 'font-size: 24px');
-        api.addNewCard(title.value, link.value)
+        api.addNewCard(title.value,link.value)
             .then((res) => {
-                const newCard = new Card(res, api).create();
+                const newCard = new Card(res, api, markup).create();
                 cardList.addCard(newCard);
                 addPlacePopup.close();
             })
