@@ -17,7 +17,6 @@ module.exports = {
     module: {
         rules: [{
             test: /\.js$/,
-            exclude: /node_modules/,
             use: {
                 loader: "babel-loader"
             },
@@ -42,7 +41,9 @@ module.exports = {
                 'file-loader?name=./images/[name].[ext]',
                 {
                     loader: 'image-webpack-loader',
-                    options: {},
+                    options: {
+                        esModule: false
+                    },
                 },
             ],
         },
