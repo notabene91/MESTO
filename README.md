@@ -3,7 +3,9 @@
 https://notabene91.github.io/MESTO/
 
 Учебный проект Яндекс.Практикума с использованием
-нативного JS и Webpack.
+нативного JS и Webpack.  
+
+`HTML,CSS,JS`
 
 ### Версия:  
 0.0.2
